@@ -12,6 +12,7 @@ export default {
 
 <style lang="scss">
 
-    @import './styles/generals.scss' 
+    @import './styles/generals.scss';
+    @import '../node_modules/bootstrap/scss/bootstrap';
 
 </style>
