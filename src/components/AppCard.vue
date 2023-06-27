@@ -1,16 +1,24 @@
 <script>
+
 export default {
  props: {
-        //movie: Object
+        mymovie: Object,
     }
 }
 </script>
 
 <template lang="">
- 
+
+    <div>
+        
+        <!--{{ myMovie.name }}
+        {{ myMovie.poster_path }}
+        {{ myMovie.name }} -->
+        
+    </div>
   
 </template>
 
-<style lang="">
+<style lang="scss" scoped>
  
 </style>

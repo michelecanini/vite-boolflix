@@ -10,9 +10,11 @@ export default {
     },
     data() {
         return {
+            moviesList: [],
             store
         }
-    }
+    },
+    
 }
 
 </script>
@@ -21,11 +23,15 @@ export default {
 
     <div class="container">
         <div class="row">
-            <div v-for="(movie, index) in store.moviesList" v-bind:key="index" class="col-6 col-md-3 mb-2">
-                {{ movie.title }}
-                {{ movie.original_title }}
-                {{ movie.original_language }}
-                {{ movie.vote_count }}
+            <div v-for="(movie, index) in store.moviesList" v-bind:key="movie.id" class="col-6 col-md-3 mb-2">
+                <ul>
+                    <li>Titolo: <strong>{{ movie.title }}</strong></li>
+                    <li>Titolo Originale: <strong>{{ movie.original_title }}</strong></li>
+                    <li>Lingua: <strong>{{ movie.original_language }}</strong></li>
+                    <li>Voto: <strong>{{ movie.vote_count }}</strong></li>
+                </ul>
+
+                <!-- <AppCard :myMovie="movie"/> -->
             </div>
         </div>
     </div>
