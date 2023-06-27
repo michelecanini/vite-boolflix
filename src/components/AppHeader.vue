@@ -1,7 +1,15 @@
 <script>
+
+import { store } from '../store.js'
+
 export default {
- 
+    data() {
+        return {
+            store
+        }
+    }
 }
+
 </script>
 
 <template lang="">
@@ -14,8 +22,8 @@ export default {
             </div>
             <div class="col-9 mt-2 ">
                 <div class="input-group">
-                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                    <button type="button" class="btn btn-outline-primary">search</button>
+                    <input type="search" class="form-control rounded" placeholder="Cerca Film e Serie TV" aria-label="Search" aria-describedby="search-addon" v-model="store.searchText" @keyup.enter="$emit('search')"/>
+                    <button type="button" class="btn btn-outline-primary" @click="$emit('search')">search</button>
                 </div>
             </div>
         </div>

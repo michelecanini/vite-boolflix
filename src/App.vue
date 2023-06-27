@@ -3,12 +3,29 @@
 import AppHeader from './components/AppHeader.vue'
 import AppMain from './components/AppMain.vue';
 import AppCard from './components/AppCard.vue';
+import { store } from './store.js'
+import axios from 'axios';
+
 
 export default {
     components: {
         AppHeader,
         AppMain,
         AppCard
+    },
+    data() {
+        return {
+            store,
+        }
+    },
+    methods:{
+
+        searchMovie() {
+            let searchUrlComplete = `${store.moviesApiUri}?api_key=${store.apiKey}&query=${store.searchText}`;
+            axios.get(searchUrlComplete).then ((response) => {
+                store.moviesList = response.data.results;
+            })
+        }
     }
 }
 
@@ -17,7 +34,7 @@ export default {
 <template lang="">
 
   <div>
-    <AppHeader />
+    <AppHeader @search="searchMovie" />
     <AppMain />
     <AppCard />
   </div>
