@@ -23,10 +23,17 @@ export default {
     methods:{
 
         searchMovie() {
+
             let searchUrlComplete = `${store.moviesApiUri}?api_key=${store.apiKey}&query=${store.searchText}`;
             axios.get(searchUrlComplete).then ((response) => {
                 store.moviesList = response.data.results;
-            })
+            });
+
+            let searchUrlCompleteTv = `${store.seriesApiUri}?api_key=${store.apiKey}&query=${store.searchText}`;
+            axios.get(searchUrlCompleteTv).then ((response) => {
+                store.tvSeriesList = response.data.results;
+            });
+
         }
     }
 }
