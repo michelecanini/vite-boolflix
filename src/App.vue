@@ -2,7 +2,8 @@
 
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
-import AppCard from './components/AppCard.vue';
+import AppCardMovie from './components/AppCardMovie.vue';
+import AppCardTv from './components/AppCardTv.vue';
 import { store } from './store.js';
 import axios from 'axios';
 
@@ -11,7 +12,8 @@ export default {
     components: {
         AppHeader,
         AppMain,
-        AppCard
+        AppCardMovie,
+        AppCardTv
     },
     data() {
         return {
@@ -36,7 +38,6 @@ export default {
   <div>
     <AppHeader @search="searchMovie" />
     <AppMain />
-    <!--<AppCard /> -->
   </div>
 
 </template>

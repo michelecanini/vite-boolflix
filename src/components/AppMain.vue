@@ -2,11 +2,11 @@
 
 import axios from 'axios';
 import { store } from '../store.js'
-import AppCard from './AppCard.vue';
+import AppCardMovie from './AppCardMovie.vue';
 
 export default {
     components: {
-        AppCard
+        AppCardMovie
     },
     data() {
         return {
@@ -23,8 +23,8 @@ export default {
         <div class="row">
             <div v-for="(movie, index) in store.moviesList" v-bind:key="movie.id" class="col-6 col-md-4 mb-2">
             
-                 <AppCard v-bind:myMovie="movie"/>
-                 
+                 <AppCardMovie v-bind:myMovie="movie"/>
+
             </div>
         </div>
     </div>
