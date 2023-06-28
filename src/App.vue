@@ -1,9 +1,9 @@
 <script>
 
-import AppHeader from './components/AppHeader.vue'
+import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppCard from './components/AppCard.vue';
-import { store } from './store.js'
+import { store } from './store.js';
 import axios from 'axios';
 
 
@@ -36,7 +36,7 @@ export default {
   <div>
     <AppHeader @search="searchMovie" />
     <AppMain />
-    <AppCard />
+    <!--<AppCard /> -->
   </div>
 
 </template>
