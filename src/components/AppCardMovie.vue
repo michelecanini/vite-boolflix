@@ -13,9 +13,10 @@ export default {
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img :src="`https://image.tmdb.org/t/p/w342/${myMovie.poster_path}`">
+                <img v-if="myMovie.poster_path" :src="`https://image.tmdb.org/t/p/w342/${myMovie.poster_path}`">
+                <div v-else class="fallback-cover text-white">Cover non disponibile</div>
             </div>
-            <div class="flip-card-back mt-5">
+            <div class="flip-card-back mt-5" :class="{ 'fallback-cover-back': !myMovie.poster_path }">
                 <ul>
                     <li>Titolo Film:<br> <strong>{{ myMovie.title }}</strong></li>
                     <li class="mt-2">Titolo Originale:<br> <strong>{{ myMovie.original_title }}</strong></li>
@@ -32,7 +33,8 @@ export default {
 .flip-card {
     background-color: transparent;
     perspective: 1000px;
-    margin-bottom: 650px; /* Aggiungi margini attorno alla card */
+    margin-bottom: 650px;
+    filter: drop-shadow(0 0 20px rgba(0,0,255,0.5));
 }
 
 .flip-card-inner {
@@ -59,6 +61,7 @@ export default {
     background-color: #000; 
     color: white;
     transform: rotateY(180deg);
+    font-size: 17px;
 }
 
 .flip-card:hover .flip-card-front img {
@@ -78,7 +81,34 @@ export default {
     overflow-wrap: break-word;
     margin: auto;
 }
-.flip-card {
-    filter: drop-shadow(0 0 20px rgba(0,0,255,0.5)); /* Aggiunge un bordo sfocato blu */
+
+.fallback-cover {
+    color: red;
+    font-size: 20px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    background-color: rgb(255, 66, 66);
 }
+
+.flip-card:hover .fallback-cover {
+    opacity: 0;
+}
+
+.flip-card:hover .flip-card-back img{
+    filter: brightness(0%);
+    padding: 50px;
+    background-color: red;
+}
+
+.fallback-cover-back {
+    color: white;
+    font-size: 18px;
+    padding-bottom: 350px;
+    background-color: rgb(255, 66, 66);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 </style>
