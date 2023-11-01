@@ -31,7 +31,9 @@ export default {
                 <ul>
                     <li>Titolo Serie:<br> <strong>{{ mySerie.name }}</strong></li>
                     <li class="mt-2">Titolo Originale:<br> <strong>{{ mySerie.original_name }}</strong></li>
-                    <li class="mt-2">Lingua: <strong>{{ mySerie.original_language }}</strong></li>
+                    <li class="mt-2">Lingua: 
+                        <span :class="`fi fi-${getFlagCode(mySerie.original_language)}`"></span>
+                    </li>
                     <li class="mt-2">Voto: <strong>{{parseInt(Math.round(mySerie.vote_average / 2))}}</strong></li>
                 </ul>
             </div>
