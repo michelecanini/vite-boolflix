@@ -20,20 +20,34 @@ export default {
         }
     },
     methods:{
+    searchMovie() {
+        // Svuota i risultati della ricerca precedente
+        store.moviesList = [];
+        store.tvSeriesList = [];
 
-        searchMovie() {
-
-            let searchUrlComplete = `${store.moviesApiUri}?api_key=${store.apiKey}&query=${store.searchText}`;
-            axios.get(searchUrlComplete).then ((response) => {
+        let searchUrlComplete = `${store.moviesApiUri}?api_key=${store.apiKey}&query=${store.searchText}`;
+        axios.get(searchUrlComplete).then ((response) => {
+            if(response.data.results.length === 0){
+                store.errorMessage = "Nessun film o serie tv trovati";
+            } else {
                 store.moviesList = response.data.results;
-            });
+                store.errorMessage = "";
+            }
+        });
 
-            let searchUrlCompleteTv = `${store.seriesApiUri}?api_key=${store.apiKey}&query=${store.searchText}`;
-            axios.get(searchUrlCompleteTv).then ((response) => {
+        let searchUrlCompleteTv = `${store.seriesApiUri}?api_key=${store.apiKey}&query=${store.searchText}`;
+        axios.get(searchUrlCompleteTv).then ((response) => {
+            if(response.data.results.length === 0){
+                store.errorMessage = "Nessun film o serie tv trovati";
+            } else {
                 store.tvSeriesList = response.data.results;
-            });
-        }
+                store.errorMessage = "";
+            }
+        });
     }
+}
+
+
 }
 
 </script>

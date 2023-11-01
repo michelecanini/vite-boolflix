@@ -22,3 +22,14 @@ items.forEach((el) => {
         next = next.nextElementSibling
     }
 })
+
+document.querySelector('button').addEventListener('click', function() {
+    var input = document.querySelector('input');
+    if (input.value.trim() === '') {
+        input.setCustomValidity('Per favore, inserisci del testo.');
+    } else {
+        input.setCustomValidity('');
+    }
+    var form = input.closest('form');
+    form.classList.add('was-validated');
+});

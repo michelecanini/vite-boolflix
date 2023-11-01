@@ -23,16 +23,20 @@ export default {
 
 <template lang="">
 
- <div class="container">
-    <div class="row card_margin">
-      <div v-for="(movie, index) in store.moviesList" v-bind:key="movie.id" class="col-6 col-md-4 mt-5 mb-2 text-center">
-        <AppCardMovie v-bind:myMovie="movie" @mouseover.native="rotate[index] = true" @mouseout.native="rotate[index] = false" :class="{ 'rotate': rotate[index] }"/>
-      </div>
-      <div v-for="(serie, index) in store.tvSeriesList" v-bind:key="serie.id" class="col-6 col-md-4 mt-5 mb-2 text-center">
-        <AppCardTv v-bind:mySerie="serie" @mouseover.native="rotate[index] = true" @mouseout.native="rotate[index] = false" :class="{ 'rotate': rotate[index] }"/>
-      </div>
-    </div>
-  </div>
+<div class="container">
+   <div class="row card_margin justify-content-center ">
+     <div v-if="store.errorMessage" class="col-6 mt-5 mb-2 text-center error-message">
+       <h2>{{ store.errorMessage }}</h2>
+     </div>
+     <div v-else v-for="(movie, index) in store.moviesList" v-bind:key="movie.id" class="col-6 col-md-4 mt-5 mb-2 text-center">
+       <AppCardMovie v-bind:myMovie="movie" @mouseover.native="rotate[index] = true" @mouseout.native="rotate[index] = false" :class="{ 'rotate': rotate[index] }"/>
+     </div>
+     <div v-for="(serie, index) in store.tvSeriesList" v-bind:key="serie.id" class="col-6 col-md-4 mt-5 mb-2 text-center">
+       <AppCardTv v-bind:mySerie="serie" @mouseover.native="rotate[index] = true" @mouseout.native="rotate[index] = false" :class="{ 'rotate': rotate[index] }"/>
+     </div>
+   </div>
+ </div>
+
 
     <!--carosello slide-->
     <div class="container-fluid text-center carousel_slide"> 
@@ -135,5 +139,12 @@ export default {
 .card_margin{
     margin-top: 6rem !important;
 }
+
+.error-message {
+        color: red;
+        font-size: 1.5em;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px #000000;
+    }
 
 </style>
