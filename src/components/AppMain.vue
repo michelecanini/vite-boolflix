@@ -64,7 +64,7 @@ export default {
                         <div class="carousel-item"> 
                             <div class="col-md-2"> 
                                 <div class="card"> 
-                                    <div class="card-img"> <img src="https://www.greaterfool.tv/test/wp-content/uploads/2022/10/film-hd-in-streaming.jpg" class="img-fluid"> </div> <div class="card-img-overlay">Slide 3</div> 
+                                    <div class="card-img"> <img src="https://www.greaterfool.tv/test/wp-content/uploads/2022/10/film-hd-in-streaming.jpg" class="img-fluid"> </div> <div class="card-img-overlay"></div> 
                                 </div> 
                             </div> 
                         </div> 
@@ -72,14 +72,14 @@ export default {
                             <div class="col-md-2"> 
                                 <div class="card"> 
                                     <div class="card-img"> <img src="https://i.ytimg.com/vi/1qIvQxLcyys/maxresdefault.jpg" class="img-fluid"> </div> 
-                                    <div class="card-img-overlay">Slide 4</div> 
+                                    <div class="card-img-overlay"></div> 
                                 </div> 
                             </div> 
                         </div> 
                         <div class="carousel-item"> 
                             <div class="col-md-2"> 
                                 <div class="card"> 
-                                    <div class="card-img"> <img src="https://cdn.wallpapersafari.com/86/83/c7nmps.jpg" class="img-fluid"> </div> <div class="card-img-overlay">Slide 5</div> 
+                                    <div class="card-img"> <img src="https://cdn.wallpapersafari.com/86/83/c7nmps.jpg" class="img-fluid"> </div> <div class="card-img-overlay"></div> 
                                 </div> 
                             </div> 
                         </div> 
@@ -93,14 +93,14 @@ export default {
                         <div class="carousel-item"> 
                             <div class="col-md-2"> 
                                 <div class="card"> 
-                                    <div class="card-img"> <img src="https://img.wallscloud.net/uploads/thumb/2845750753/one-piece-rR9L-1024x576-MM-80.webp" class="img-fluid"> </div> <div class="card-img-overlay">Slide 7</div> 
+                                    <div class="card-img"> <img src="https://img.wallscloud.net/uploads/thumb/2845750753/one-piece-rR9L-1024x576-MM-80.webp" class="img-fluid"> </div> <div class="card-img-overlay"></div> 
                                 </div> 
                             </div> 
                         </div> 
                         <div class="carousel-item"> 
                             <div class="col-md-2"> 
                                 <div class="card"> 
-                                    <div class="card-img"> <img src="https://www.pixelstalk.net/wp-content/uploads/2016/07/1080p-Movie-Wallpapers-For-Desktop.jpg" class="img-fluid"> </div> <div class="card-img-overlay">Slide 8</div> 
+                                    <div class="card-img"> <img src="https://wallpapercave.com/wp/Bbd3fkG.jpg" class="img-fluid"> </div> <div class="card-img-overlay"></div> 
                                 </div> 
                             </div> 
                         </div> 

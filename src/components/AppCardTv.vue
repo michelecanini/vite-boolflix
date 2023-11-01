@@ -26,7 +26,6 @@ export default {
 </template>
 
 <style scoped>
-/* Il tuo stile esistente */
 
 .flip-card {
     background-color: transparent;
