@@ -34,11 +34,14 @@ export default {
                     <li class="mt-2">Lingua: 
                         <span :class="`fi fi-${getFlagCode(mySerie.original_language)}`"></span>
                     </li>
-                    <li class="mt-2">Voto: <strong>{{parseInt(Math.round(mySerie.vote_average / 2))}}</strong></li>
+                    <li class="mt-2">Voto: 
+                        <i v-for="n in 5" :key="n" class="fa-star" :class="{ 'fa-solid': n <= Math.round(mySerie.vote_average / 2), 'fa-regular': n > Math.round(mySerie.vote_average / 2) }" style="color: #ffff00;"></i>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </template>
 
 <style scoped>
