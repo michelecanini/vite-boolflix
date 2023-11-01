@@ -1,8 +1,22 @@
 <script>
+import "/node_modules/flag-icons/css/flag-icons.min.css";
+
 export default {
     props: {
         mySerie: Object
     },
+    methods: {
+        getFlagCode(language) {
+            switch (language) {
+                case 'en':
+                    return 'gb'; // per la Gran Bretagna
+                case 'us':
+                    return 'us'; // per gli Stati Uniti
+                default:
+                    return language; // per tutte le altre lingue
+            }
+        }
+    }
 }
 </script>
 

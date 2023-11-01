@@ -1,16 +1,29 @@
 <script>
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 export default {
     props: {
         myMovie: Object
     },
+    methods: {
+        getFlagCode(language) {
+            switch (language) {
+                case 'en':
+                    return 'gb'; // per la Gran Bretagna
+                case 'us':
+                    return 'us'; // per gli Stati Uniti
+                default:
+                    return language; // per tutte le altre lingue
+            }
+        }
+    }
 }
 
 </script>
 
 <template lang="">
 
-    <div class="flip-card">
+<div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
                 <img v-if="myMovie.poster_path" :src="`https://image.tmdb.org/t/p/w342/${myMovie.poster_path}`">
@@ -20,7 +33,9 @@ export default {
                 <ul>
                     <li>Titolo Film:<br> <strong>{{ myMovie.title }}</strong></li>
                     <li class="mt-2">Titolo Originale:<br> <strong>{{ myMovie.original_title }}</strong></li>
-                    <li class="mt-2">Lingua: <strong>{{ myMovie.original_language }}</strong></li>
+                    <li class="mt-2">Lingua: 
+                        <span :class="`fi fi-${getFlagCode(myMovie.original_language)}`"></span>
+                    </li>
                     <li class="mt-2">Voto: <strong>{{parseInt(Math.round(myMovie.vote_average / 2))}}</strong></li>
                 </ul>
             </div>
@@ -111,4 +126,8 @@ export default {
     align-items: center;
 }
 
+.fi {
+    color: white; 
+    width: 30px;
+}
 </style>
