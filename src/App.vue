@@ -7,7 +7,6 @@ import AppCardTv from './components/AppCardTv.vue';
 import { store } from './store.js';
 import axios from 'axios';
 
-
 export default {
     components: {
         AppHeader,
@@ -33,7 +32,6 @@ export default {
             axios.get(searchUrlCompleteTv).then ((response) => {
                 store.tvSeriesList = response.data.results;
             });
-
         }
     }
 }
@@ -42,10 +40,10 @@ export default {
 
 <template lang="">
 
-  <div>
-    <AppHeader @search="searchMovie" />
-    <AppMain />
-  </div>
+    <div>
+        <AppHeader @search="searchMovie" />
+        <AppMain />
+    </div>
 
 </template>
 
