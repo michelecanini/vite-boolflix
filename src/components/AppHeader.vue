@@ -22,7 +22,7 @@ export default {
                   <h1><a href="https://michelecanini-boolflix.netlify.app/" style="text-decoration: none;">BOOLFLIX</a></h1>
                 </div>
                 <div class="col-6 mt-4 mb-2">
-                  <form>
+                  <form @submit.prevent="searchMovie">
                       <div class="input-group">
                           <input type="search" class="form-control rounded" placeholder="Cerca Film e Serie TV" aria-label="Search" aria-describedby="search-addon" v-model="store.searchText" @keyup.enter="$emit('search')" required />
                           <div class="invalid-feedback">Per favore, inserisci del testo.</div>
