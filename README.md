@@ -1,5 +1,5 @@
 # Boolflix
-<img src="src/assets/images/boolflix.png">
+<img src="src/assets/images/boolflix-min.png">
 
 
 # Vue 3 + Vite
