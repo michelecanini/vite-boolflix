@@ -71,7 +71,6 @@ export default {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
 }
 
 .flip-card-back {
@@ -79,6 +78,7 @@ export default {
     color: white;
     transform: rotateY(180deg);
     font-size: 17px;
+    backface-visibility: hidden;
 }
 
 .flip-card:hover .flip-card-front img {
