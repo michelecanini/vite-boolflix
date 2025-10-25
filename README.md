@@ -1,4 +1,4 @@
-# 🎬 Boolflix (2022)
+# 🎬 Boolflix (2023)
 <img src="src/assets/images/boolflix-min.png">
 
 
