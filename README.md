@@ -4,6 +4,6 @@
 
 # Vue 3 + Vite
 
-> Esercizio front-end realizzato nel 2022 (Boolean) per sperimentare **Vue 3 + Vite**.
+> Esercizio front-end realizzato nel 2023 (Boolean) per sperimentare **Vue 3 + Vite**.
 
 Non più mantenuto.
